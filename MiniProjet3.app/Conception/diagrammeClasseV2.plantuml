@@ -1,0 +1,50 @@
+
+@startuml DiagrammeClassMarwan
+
+skinparam monochrome true
+skinparam linetype polyline
+skinparam classAttributeIconSize 0
+
+
+interface Commande{
+    execute():void
+}
+class OFFcommande implements Commande{
+
+}
+
+class ONcommande implements Commande{
+    
+}
+class PLUScommande implements Commande{
+    
+}
+class MOINScommande implements Commande{
+    
+}
+interface Lumininaire{
+
+}
+class SimpleLumininaire implements Lumininaire {
+
+
+}
+class LuminiaireLumininaire implements Lumininaire{
+
+}
+
+class Ventillateur extends LuminiaireLumininaire{
+
+}
+
+
+
+ONcommande *-- SimpleLumininaire
+OFFcommande *-- SimpleLumininaire
+PLUScommande *-- SimpleLumininaire
+MOINScommande *-- SimpleLumininaire
+
+LuminiaireLumininaire -->  "1" Lumininaire: Decorate
+
+
+@enduml
