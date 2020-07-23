@@ -1,0 +1,20 @@
+@startuml DiagrammeClassMiniProjet3
+
+skinparam monochrome true
+skinparam linetype polyline
+skinparam classAttributeIconSize 0
+
+
+interface Command{
+  execute(): void
+}
+
+class Switch
+Class Light
+class SwitchOnCommand implements Command
+class SwitchOffCommand implements Command
+SwitchOnCommand *-- Light
+SwitchOffCommand *-- Light
+Switch *-- "*" Command
+
+@enduml
